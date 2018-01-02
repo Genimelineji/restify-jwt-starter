@@ -1,0 +1,31 @@
+{
+	"name": "restify-jwt-starter",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "./node_modules/.bin/nodemon --exec ./node_modules/.bin/ts-node index.ts",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/jsonwebtoken": "^7.2.5",
+		"@types/node": "^8.5.2",
+		"@types/passport": "^0.4.2",
+		"@types/passport-jwt": "^3.0.0",
+		"@types/restify": "^5.0.6",
+		"@types/restify-errors": "^4.3.2",
+		"nodemon": "^1.14.7",
+		"ts-node": "^4.1.0",
+		"typescript": "^2.6.2"
+	},
+	"dependencies": {
+		"jsonwebtoken": "^8.1.0",
+		"passport": "^0.4.0",
+		"passport-jwt": "^3.0.1",
+		"restify": "^6.3.4",
+		"restify-errors": "^5.0.0"
+	}
+}
