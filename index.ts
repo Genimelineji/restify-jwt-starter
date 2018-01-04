@@ -2,7 +2,7 @@ import { appConfig } from './config';
 import * as restify from 'restify';
 import * as errors from 'restify-errors';
 import { Passport } from './auth/passport';
-import { Users } from './db/index';
+import { Users } from './db/users';
 import * as passport from 'passport';
 import * as jwtDecode from 'jwt-decode';
 
@@ -18,14 +18,13 @@ server.pre((req, res, next) => {
 });
 
 server.get('/', (req, res, next) => {
-	res.send(501);
-	return next();
+	//res.send();
+	return next(new errors.ForbiddenError());
 });
 
 server.post('/login', (req, res, next) => {
 	if (!req.body || !req.body.username || !req.body.password) {
-		res.send(400);
-		return next();
+		return next(new errors.MissingParameterError('Username or Password missing!'));
 	} else {
 		const password = req.body.password;
 		const username = req.body.username;
@@ -38,12 +37,10 @@ server.post('/login', (req, res, next) => {
 							return next();
 						}
 					}).catch((error) => {
-						res.send(error);
-						return next();
+						return next(new errors.InvalidCredentialsError(error));
 					});
 			}).catch((error) => {
-				res.send(error);
-				return next();
+				return next(new errors.InvalidCredentialsError(error));
 			});
 	}
 });

@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"outDir": "./dist",
+		"sourceMap": false,
+		"declaration": false,
+		"noImplicitAny": false,
+		"removeComments": true,
+		"allowSyntheticDefaultImports": true,
+		"suppressExcessPropertyErrors": true,
+		"typeRoots": [
+			"node_modules/@types",
+			"./@types"
+		],
+		"lib": [
+			"es2017",
+			"dom"
+		]
+	},
+	"include": [
+		"./index.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

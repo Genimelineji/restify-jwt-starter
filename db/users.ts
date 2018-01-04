@@ -1,10 +1,5 @@
 import * as Promise from 'bluebird';
-
-export interface User {
-	username: string;
-	password: string;
-	email: string;
-}
+import { User } from '../@types/user';
 
 export class Users {
 	private static db: User[] = [
