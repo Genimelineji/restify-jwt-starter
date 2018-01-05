@@ -18,7 +18,6 @@ server.pre((req, res, next) => {
 });
 
 server.get('/', (req, res, next) => {
-	//res.send();
 	return next(new errors.ForbiddenError());
 });
 
