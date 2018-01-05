@@ -1,17 +1,30 @@
 {
 	"name": "restify-jwt-starter",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Rest API (with restify, passport, passport-jwt) starter project",
 	"main": "index.js",
 	"scripts": {
-		"start": "./node_modules/.bin/nodemon --exec ./node_modules/.bin/ts-node index.ts",
-		"start:prod": "./node_modules/.bin/nodemon ./dist/index.js",
+		"start:pm2": "pm2 start ./dist/index.js --name='restify-jwt-starter' -i 0",
+		"start:dev": "./node_modules/.bin/nodemon --exec ./node_modules/.bin/ts-node index.ts",
+		"start:compiled": "./node_modules/.bin/nodemon ./dist/index.js",
 		"build": "tsc",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"keywords": [],
-	"author": "",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com:Genimelineji/restify-jwt-starter.git"
+	},
+	"keywords": [
+		"nodejs",
+		"restify",
+		"starter"
+	],
+	"author": "Genimelineji <genimelineji@gmail.com>",
 	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com:Genimelineji/restify-jwt-starter/issues"
+	},
+	"homepage": "https://github.com:Genimelineji/restify-jwt-starter#readme",
 	"devDependencies": {
 		"@types/bluebird": "^3.5.19",
 		"@types/jsonwebtoken": "^7.2.5",
